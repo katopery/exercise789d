@@ -9,6 +9,10 @@ class User < ApplicationRecord
   has_many :book_comments, dependent: :destroy
   has_one_attached :profile_image
   
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
+  
   #フォローしている関連付け
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   # フォローされている関連付け
