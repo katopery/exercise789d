@@ -105,10 +105,10 @@ ActiveRecord::Schema.define(version: 2024_02_14_133741) do
   end
 
   create_table "view_counts", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.integer "book_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

@@ -1,6 +1,9 @@
 class CreateViewCounts < ActiveRecord::Migration[6.1]
   def change
-    add_column :view_counts, :user_id, :integer
-    add_column :view_counts, :book_id, :integer
+    create_table :view_counts do |t|
+      t.integer :user_id
+      t.integer :book_id
+      t.timestamps
+    end
   end
 end
